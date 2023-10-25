@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "page_width": "medium"
+      }
+    },
+    "4fe00f25-4dd3-47cd-ac15-1efc6a681c0e": {
+      "type": "faq-contact-form",
+      "blocks": {
+        "71def986-8db6-4e02-b7f4-2dde0b75139b": {
+          "type": "text",
+          "settings": {
+            "width": "half",
+            "icon": "phone",
+            "title": "Phone (call-back)",
+            "content": "<p>Monday-Friday 9am - 5pm PST<\/p><p>Phone: please send us your cellphone number via email or contact form below and we'll call you back during working hours<\/p>"
+          }
+        },
+        "1526453c-ee81-4ca7-8db9-5a1a5696589b": {
+          "type": "text",
+          "settings": {
+            "width": "half",
+            "icon": "email",
+            "title": "Email (we reply within 12-24 hours)",
+            "content": "<p><a href=\"mailto:supportproduct@shylero.com\" target=\"_blank\" title=\"mailto:supportproduct@shylero.com\">supportproduct@shylero.com<\/a><\/p><p>(Please include order ID for any order related questions)<\/p>"
+          }
+        },
+        "d2fde59b-6634-4b9c-ad9e-c41e828c380c": {
+          "type": "faq_items",
+          "settings": {
+            "width": "half",
+            "bg_color": "#f5f5f5",
+            "title": "FAQ",
+            "faq_items": "<p><em><strong>Are your beach bags completely waterproof?<\/strong><\/em><\/p><p>All our beach bags have a different level of<strong> <\/strong>Ingress Protection (IP)<br\/><br\/>Also known as International Protection ratings, these standards are used to define the levels of sealing effectiveness against intrusion from foreign bodies such as dirt and water.<br\/><br\/>P63 - Protected from total dust ingress and water spray less than 60 degrees from vertical<br\/><br\/>IP64 - Protected from total dust ingress and water spray from any direction<br\/><br\/>IP65 - Protected from total dust ingress and low pressure water jets from any direction<br\/><br\/>IP66 - Protected from total dust ingress and high pressure water jets from any direction<br\/><br\/>IP67 - Protected from total dust ingress and immersion between 15 cm and 1 m in depth<\/p><p><\/p><p><em><strong>What are your shipping options?<\/strong><\/em><\/p><p>Please check them <a href=\"https:\/\/shylero.com\/pages\/shipping\" target=\"_blank\" title=\"https:\/\/shylero.com\/pages\/shipping\">here<\/a><\/p><p><em><strong>What is your return policy?<\/strong><\/em><\/p><p>Please check it <a href=\"https:\/\/shylero.com\/pages\/returns-warranty\" title=\"https:\/\/shylero.com\/pages\/returns-warranty\">here<\/a><\/p><p><em><strong>Do you have a product warranty?<\/strong><\/em><\/p><p>Yes. 1 year. Please check the details <a href=\"https:\/\/shylero.com\/pages\/returns-warranty\" title=\"https:\/\/shylero.com\/pages\/returns-warranty\">here<\/a> <\/p><p><em><strong>Where can I buy your products?<\/strong><\/em><\/p><p>you can purchase directly from us here:<br\/><br\/>USA<strong><br\/><\/strong>- shylero.com<br\/>- amazon.com - LERO FAMILY LLC<br\/>Australia<strong><br\/>- <\/strong>amazon.au - LERO FAMILY LLC <br\/>(USA)<br\/><br\/>Or from an authorized retailer that has a proof of purchase of SHYLERO products from LERO FAMILY LLC<\/p><p><em><strong>How do I reset my TSA approved cable lock that comes with a clear backpack?<\/strong><\/em><\/p><p>Check out this <a href=\"https:\/\/www.youtube.com\/watch?v=_KC9YJovHL0&ab_channel=SHYLEROBEACHTOTES%2CNURSEBAGS%2CPVCBACKPACKS\" target=\"_blank\" title=\"https:\/\/www.youtube.com\/watch?v=_KC9YJovHL0&ab_channel=SHYLEROBEACHTOTES%2CNURSEBAGS%2CPVCBACKPACKS\">video<\/a> on our official Youtube channel <\/p>"
+          }
+        },
+        "ce733068-19de-42cf-a473-430de2d800ae": {
+          "type": "contact_form",
+          "settings": {
+            "width": "half",
+            "title": "Contact Form",
+            "subjects": "General,\nOrders,\nShipping,\nReturns \/ Refunds,\nMedia,\nWholesale,\nAccessibility",
+            "countries": "USA,\nAustralia"
+          }
+        }
+      },
+      "block_order": [
+        "71def986-8db6-4e02-b7f4-2dde0b75139b",
+        "1526453c-ee81-4ca7-8db9-5a1a5696589b",
+        "d2fde59b-6634-4b9c-ad9e-c41e828c380c",
+        "ce733068-19de-42cf-a473-430de2d800ae"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4fe00f25-4dd3-47cd-ac15-1efc6a681c0e"
+  ]
+}

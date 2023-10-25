@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-customers-register",
+      "blocks": {
+        "register_form": {
+          "type": "register",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "register_form"
+      ],
+      "settings": {
+        "left-account-img": "shopify:\/\/shop_images\/Online_wishes_list-rafiki_1.png",
+        "right-account-img": "shopify:\/\/shop_images\/In_no_time-rafiki_1.png",
+        "additionoal_info": "<p>By creating an account, you agree to SHYLERO's <a href=\"\/pages\/conditions-of-use\" title=\"Conditions of Use\">Conditions of Use<\/a> and <a href=\"\/pages\/privacy-policy\" title=\"Privacy Policy\">Privacy Policy<\/a>.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

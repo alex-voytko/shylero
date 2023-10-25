@@ -1,0 +1,613 @@
+<section class="faq-contact__section">
+    <div class="faq-contact__wrapper container">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'text' %}
+                    <div class="text__wrapper faq-contact__{{ block.settings.width }}">
+                        <div class="text-title__wrapper">
+                            <span class="text-title__icon">{%- render 'icon' with block.settings.icon -%}</span>
+                            <span class="text-title__title">{{ block.settings.title }}</span>
+                        </div>
+                        <div class="text__content">
+                            {{ block.settings.content }}
+                        </div>
+                    </div>
+                {% when 'faq_items' %}
+                    <div class="faq_items__wrapper faq-contact__{{ block.settings.width }}" style="background: {{ block.settings.bg_color }};">
+                        <div class="faq_items__title">{{ block.settings.title }}</div>
+                        <div class="faq_items__items">
+                            {{ block.settings.faq_items }}
+                        </div>
+                        <div class="faq_items__chevron-wrapper" style="display: none;">
+                          {%- render 'icon' with 'faq_chevron' -%}
+                        </div>
+                    </div>
+                {% when 'contact_form' %}
+                  <div class="contact_form__wrapper faq-contact__{{ block.settings.width }}">
+                    {% if block.settings.title != blank %}
+                      <div class="contact_form__title">{{ block.settings.title }}</div>
+                    {% endif %}
+                    {%- form 'contact', class: 'contact__form form' -%}
+                      {%- if form.posted_successfully? -%}
+                        <div class="banner banner--success form__banner">
+                          <span class="banner__ribbon">{% render 'icon' with 'form-success' %}</span>
+                          <p class="banner__content">{{ 'contact.form.successfully_sent' | t }}</p>
+                        </div>
+                      {%- endif -%}
+          
+                      {%- if form.errors -%}
+                        <div class="form__banner banner banner--error">
+                          <span class="banner__ribbon">{% render 'icon' with 'form-error' %}</span>
+          
+                          <div class="banner__content">
+                            {{- form.errors | default_errors -}}
+                          </div>
+                        </div>
+                      {%- endif -%}
+          
+                      <div class="input">
+                        <input id="contact-form-first_name" type="text" class="input__field {% if customer.first_name != blank %}is-filled{% endif %}" name="contact[first_name]" aria-label="{{ 'contact.form.first_name' | t }}" required {% if customer %}value="{{ customer.first_name }}"{% endif %}>
+                        <label for="contact-form-first_name" class="input__label">{{ 'contact.form.first_name' | t }}*</label>
+                      </div>
+
+                      <div class="input">
+                        <input id="contact-form-last_name" type="text" class="input__field {% if customer.last_name != blank %}is-filled{% endif %}" name="contact[last_name]" aria-label="{{ 'contact.form.last_name' | t }}" required {% if customer %}value="{{ customer.last_name }}"{% endif %}>
+                        <label for="contact-form-last_name" class="input__label">{{ 'contact.form.last_name' | t }}*</label>
+                      </div>
+          
+                      <div class="input">
+                        <input id="contact-form-email" type="email" class="input__field {% if customer.email != blank %}is-filled{% endif %}" name="contact[email]" aria-label="{{ 'contact.form.email' | t }}" required {% if customer %}value="{{ customer.email }}"{% endif %}>
+                        <label for="contact-form-email" class="input__label">{{ 'contact.form.email' | t }}*</label>
+                      </div>
+
+                      <div class="input">
+                        <input id="contact-form-phone" type="tel" class="input__field {% if customer.phone != blank %}is-filled{% endif %}" name="contact[phone]" aria-label="{{ 'contact.form.phone' | t }}" {% if customer %}value="{{ customer.phone }}"{% endif %}>
+                        <label for="contact-form-phone" class="input__label">{{ 'contact.form.phone' | t }}</label>
+                      </div>
+
+                      <div class="input">
+                        
+                        <label for="contact-form-subject" class="input__top_label">{{ 'contact.form.subject' | t }}*</label>
+                        <div class="select-wrapper">
+                          <select id="contact-form-subject" class="select" name="contact[subject]" title="subject" required>
+                            <option value="" disabled selected></option>
+      
+                            {% assign values = block.settings.subjects | split: ',' %}
+
+                            {%- for value in values -%}
+                              {%- assign trim_value = value | strip -%}
+      
+                              <option value="{{ trim_value | escape }}">{{ trim_value | escape }}</option>
+                            {%- endfor -%}
+                          </select>
+      
+                          <svg focusable="false" class="icon icon--chevron" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1094 1.81247L6.85937 7.07809C6.79687 7.14059 6.72917 7.18476 6.65625 7.21059C6.58333 7.23684 6.50521 7.24997 6.42188 7.24997C6.33854 7.24997 6.26042 7.23684 6.1875 7.21059C6.11458 7.18476 6.04688 7.14059 5.98438 7.07809L0.71875 1.81247C0.572917 1.66664 0.5 1.48434 0.5 1.26559C0.5 1.04684 0.578125 0.859345 0.734375 0.703095C0.890625 0.546845 1.07292 0.46872 1.28125 0.46872C1.48958 0.46872 1.67188 0.546845 1.82813 0.703095L6.42188 5.29684L11.0156 0.703095C11.1615 0.557261 11.341 0.484344 11.5544 0.484344C11.7681 0.484344 11.9531 0.562469 12.1094 0.718719C12.2656 0.874969 12.3438 1.05726 12.3438 1.26559C12.3438 1.47393 12.2656 1.65622 12.1094 1.81247Z" fill="#303030"/>
+                          </svg>
+                        </div>
+      
+                        <label for="contact-form-subject" class="input__label">{{ 'contact.form.dropdown_default' | t }}</label>
+                      </div>
+
+                      <div class="input">
+                        <label for="contact-form-country" class="input__top_label">{{ 'contact.form.country' | t }}*</label>
+                        <div class="select-wrapper">
+                          <select id="contact-form-country" class="select" name="contact[country]" title="country" required>
+                            <option value="" disabled selected></option>
+      
+                            {% assign values = block.settings.countries | split: ',' %}
+
+                            {%- for value in values -%}
+                              {%- assign trim_value = value | strip -%}
+      
+                              <option value="{{ trim_value | escape }}">{{ trim_value | escape }}</option>
+                            {%- endfor -%}
+                          </select>
+      
+                          <svg focusable="false" class="icon icon--chevron" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1094 1.81247L6.85937 7.07809C6.79687 7.14059 6.72917 7.18476 6.65625 7.21059C6.58333 7.23684 6.50521 7.24997 6.42188 7.24997C6.33854 7.24997 6.26042 7.23684 6.1875 7.21059C6.11458 7.18476 6.04688 7.14059 5.98438 7.07809L0.71875 1.81247C0.572917 1.66664 0.5 1.48434 0.5 1.26559C0.5 1.04684 0.578125 0.859345 0.734375 0.703095C0.890625 0.546845 1.07292 0.46872 1.28125 0.46872C1.48958 0.46872 1.67188 0.546845 1.82813 0.703095L6.42188 5.29684L11.0156 0.703095C11.1615 0.557261 11.341 0.484344 11.5544 0.484344C11.7681 0.484344 11.9531 0.562469 12.1094 0.718719C12.2656 0.874969 12.3438 1.05726 12.3438 1.26559C12.3438 1.47393 12.2656 1.65622 12.1094 1.81247Z" fill="#303030"/>
+                          </svg>
+                        </div>
+      
+                        <label for="contact-form-country" class="input__label">{{ 'contact.form.dropdown_default' | t }}</label>
+                      </div>
+          
+                      <div class="input">
+                        <textarea id="contact-form-message" name="contact[body]" rows="4" class="input__field input__field--textarea" aria-label="{{ 'contact.form.message' | t }}"></textarea>
+                        <label for="contact-form-message" class="input__label">{{ 'contact.form.message' | t }}</label>
+                      </div>
+          
+                      <button is="loader-button" type="submit" class="form__submit button button--primary button--full">{{ 'contact.form.submit' | t }}</button>
+                  {%- endform -%}
+                </div>
+            {% endcase %}
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+  .page-header__text-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .faq-contact__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+    padding-bottom: 100px;
+  }
+
+  .faq-contact__full {
+    grid-area: span 1 / span 2;
+  }
+
+  .text-title__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 15px;
+  }
+
+  .text-title__icon {
+    margin-right: 6px;
+  }
+
+  .text-title__title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+
+    color: #303030;
+  }
+
+  .text__content {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #303030;
+
+    max-width: 345px;
+  }
+
+  .text__content p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #303030;
+
+    max-width: 345px;
+  }
+
+  .text__content p a {
+    text-decoration: none;
+  }
+
+  .faq_items__wrapper {
+    padding: 50px 50px 50px 0;
+    position: relative;
+  }
+
+  .faq_items__wrapper::before {
+    content: '';
+    display: flex;
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: -50px;
+    background: #f5f5f5;
+  }
+
+  .faq_items__title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-transform: uppercase;
+
+    color: #303030;
+  }
+
+  .faq_items__items {
+    margin-top: 50px;
+  }
+
+  .faq_items__items .accordion {
+    cursor: pointer;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #D9D9D9;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    margin: 0;
+
+    color: #303030;
+  }
+
+  .faq_items__items .accordion em {
+    width: 90%;
+  }
+
+  .faq_items__items .accordion em strong {
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .faq_items__items .accordion svg {
+    width: 12px;
+    height: 7px;
+  }
+
+  .faq_items__items .accordion.active svg {
+    transform: rotate(180deg);
+  }
+
+  .faq_items__items .panel {
+    padding: 0 18px 0 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .faq_items__items .panel p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+
+    color: #303030;
+  }
+
+  .faq_items__items .panel:last-of-type {
+    border-bottom: 1px solid #D9D9D9;
+  }
+
+  .contact_form__title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    color: #303030;
+
+    margin-bottom: 50px;
+  }
+
+  .contact__form {
+    max-width: 900px;
+  }
+
+  .contact_form__wrapper .input__field, .contact_form__wrapper .input__label  {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .contact_form__wrapper textarea.input__field {
+    line-height: 150%;
+    padding: 15px;
+  }
+  
+  .contact_form__wrapper .input__field {
+    padding: 0 15px;
+    border: 1px solid #D9D9D9;
+  }
+
+  .contact_form__wrapper .input__label {
+    color: #A0A0A0;
+  }
+
+  .contact_form__wrapper .input__top_label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+
+    color: #303030;
+
+    margin-bottom: 10px;
+  }
+
+  .contact_form__wrapper .select-wrapper ~ .input__label {
+    top: 50px;
+  }
+
+  .contact_form__wrapper .form__submit {
+    margin-top: 15px;
+    width: fit-content;
+    padding: 15px 35px;
+  }
+
+  .contact_form__wrapper .loader-button__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 767px) {
+    .page-header__text-wrapper {
+      margin-bottom: 40px;
+    }
+
+    .faq-contact__wrapper {
+      grid-template-columns: repeat(1,1fr);
+      gap: 40px;
+      padding-bottom: 80px;
+    }
+
+    .faq-contact__full {
+      grid-area: span 1 / span 1;
+    }
+
+    .faq_items__wrapper {
+      padding: 40px 0px;
+    }
+
+    .faq_items__wrapper::after {
+      content: '';
+      display: flex;
+      width: 15px;
+      height: 100%;
+
+      position: absolute;
+      right: -15px;
+      top: 0;
+      background: #f5f5f5;
+    }
+
+    .faq_items__title {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+
+    .contact_form__title {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+  }
+</style>
+
+{% for block in section.blocks %}
+  {% if block.type == 'faq_items' %}
+    <script>
+      document.querySelectorAll('.faq_items__items p em strong').forEach(elem => {
+        let accordion = elem.closest('p');
+
+        accordion.classList.add('accordion');
+        accordion.nextElementSibling.classList.add('panel');
+        
+        console.log(getSiblings(accordion));
+      })
+
+      document.addEventListener('DOMContentLoaded', function() {
+        let chevronSVG = document.querySelector('.faq_items__chevron-wrapper').innerHTML
+        let acc = document.getElementsByClassName("accordion");
+        let i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].innerHTML += chevronSVG
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+      })
+
+      function getSiblings(elem) {
+        let siblings = [];
+        let sibling = elem.parentNode.firstChild;
+
+        while (sibling) {
+          if (sibling.nodeType === 1 && sibling !== elem) {
+            siblings.push(sibling);
+          }
+          sibling = sibling.nextSibling
+        }
+
+        return siblings;
+
+      };
+    </script>
+
+   {% break %}
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "FAQ & Contact Form",
+  "blocks": [
+    {
+        "name": "Text",
+        "type": "text",
+        "settings": [
+            {
+              "type": "select",
+               "id": "width" ,
+               "label": "Width",
+               "options": [
+                    {
+                        "value": "full",
+                        "label": "Full Width"
+                    },
+                    {
+                        "value": "half",
+                        "label": "Half Width"
+                    }
+                ],
+                "default": "half"
+            },
+            {
+               "type": "select",
+               "id": "icon" ,
+               "label": "Icon",
+               "options": [
+                    {
+                        "value": "phone",
+                        "label": "Phone"
+                    },
+                    {
+                        "value": "email",
+                        "label": "Email"
+                    },
+                    {
+                        "value": "none",
+                        "label": "None"
+                    }
+                ],
+                "default": "none"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "content",
+              "label": "Content"
+            }
+        ]
+    },
+    {
+        "name": "FAQ",
+        "type": "faq_items",
+        "limit": 1,
+        "settings": [
+            {
+              "type": "select",
+              "id": "width" ,
+              "label": "Width",
+              "options": [
+                    {
+                        "value": "full",
+                        "label": "Full Width"
+                    },
+                    {
+                        "value": "half",
+                        "label": "Half Width"
+                    }
+                ],
+                "default": "full"
+            },
+            {
+               "type": "color",
+               "id": "bg_color",
+               "label": "Background color"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "faq_items",
+              "label": "FAQ Items",
+              "info": "Fill up in next format: Text in bold and italic (for FAQ title) Text after that (for FAQ content)"
+            }
+        ]
+    },
+    {
+      "name": "Contact Form",
+      "type": "contact_form",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "width" ,
+          "label": "Width",
+          "options": [
+                {
+                    "value": "full",
+                    "label": "Full Width"
+                },
+                {
+                    "value": "half",
+                    "label": "Half Width"
+                }
+            ],
+            "default": "full"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "subjects",
+          "label": "Subjects",
+          "info": "Fill up in next format: Item 1, Item 2, Item 3..."
+        },
+        {
+          "type": "textarea",
+          "id": "countries",
+          "label": "Countries",
+          "info": "Fill up in next format: Item 1, Item 2, Item 3..."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ & Contact Form"
+    }
+  ]
+}
+{% endschema %}

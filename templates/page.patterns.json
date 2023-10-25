@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "patterns-copy",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

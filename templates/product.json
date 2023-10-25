@@ -1,0 +1,222 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_mode": "dropdown",
+            "color_mode": "variant_image",
+            "size_chart_page": "",
+            "title": "",
+            "tag_prefix": "bundle__"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "atc_button_background": "rgba(0,0,0,0)",
+            "atc_button_text_color": "rgba(0,0,0,0)",
+            "buy_now_button_background": "rgba(0,0,0,0)",
+            "buy_now_button_text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "a355b68c-2d2d-4272-adab-e1006fee46a0": {
+          "type": "shopify:\/\/apps\/zepto-product-personalizer\/blocks\/product_personalizer_page\/7411210d-7b32-4c09-9455-e129e3be4729",
+          "settings": {
+          }
+        },
+        "3d7004d8-1479-46f3-8aea-d908309a3743": {
+          "type": "links",
+          "settings": {
+            "first-icon": "<svg width=\"21\" height=\"21\" viewbox=\"0 0 21 21\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.38137 14.7105C1.90123 15.916 2.60658 16.9638 3.49727 17.8545C4.38796 18.7452 5.43562 19.4505 6.64116 19.9704C7.84476 20.4901 9.13125 20.7502 10.5016 20.7502C11.8719 20.7502 13.1584 20.4901 14.362 19.9704C15.5675 19.4505 16.6152 18.7452 17.5059 17.8545C18.3966 16.9638 19.1019 15.9161 19.6218 14.7106C20.1415 13.507 20.4016 12.2205 20.4016 10.8502C20.4016 9.47989 20.1415 8.19344 19.6218 6.98984C19.1019 5.78431 18.3966 4.7366 17.5059 3.84591C16.6152 2.95522 15.5675 2.24956 14.362 1.72902C13.1584 1.20998 11.8719 0.950195 10.5016 0.950195C9.13125 0.950195 7.8448 1.20998 6.6412 1.729C5.43566 2.24954 4.38796 2.95522 3.49727 3.84591C2.60658 4.7366 1.90123 5.78431 1.38137 6.98984C0.861677 8.19344 0.601562 9.47989 0.601562 10.8502C0.601562 12.2205 0.861677 13.5069 1.38137 14.7105ZM18.6016 10.8502C18.6016 13.0932 17.8122 15.0063 16.2353 16.5839C14.6578 18.1608 12.7446 18.9502 10.5016 18.9502C8.25855 18.9502 6.34573 18.1608 4.76885 16.5839C3.19131 15.0064 2.40156 13.0932 2.40156 10.8502C2.40156 8.60718 3.19131 6.69402 4.76885 5.11649C6.34573 3.5396 8.25855 2.7502 10.5016 2.7502C12.7446 2.7502 14.6578 3.53963 16.2353 5.1165C17.8122 6.69404 18.6016 8.60719 18.6016 10.8502Z\" fill=\"#303030\"><\/path>\n<path d=\"M9.49774 14.2659C9.34347 14.3662 9.19091 14.418 9.04044 14.4253C8.89 14.4326 8.73466 14.3963 8.57296 14.3116C8.41157 14.2271 8.29516 14.1202 8.21856 13.9925C8.14191 13.8647 8.10156 13.7103 8.10156 13.5252V8.1752C8.10156 7.9901 8.14191 7.83564 8.21856 7.7079C8.29516 7.58022 8.41157 7.47332 8.57296 7.38878C8.73466 7.30408 8.89 7.26774 9.04044 7.27508C9.19091 7.28242 9.34279 7.33377 9.49706 7.43404L13.6478 10.0845L13.6515 10.0867C13.9355 10.2512 14.0766 10.5004 14.0766 10.8502C14.0766 11.1999 13.9355 11.4492 13.6515 11.6136L13.6478 11.6159L9.49774 14.2659Z\" fill=\"#303030\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.38137 14.7105C1.90123 15.916 2.60658 16.9638 3.49727 17.8545C4.38796 18.7452 5.43562 19.4505 6.64116 19.9704C7.84476 20.4901 9.13125 20.7502 10.5016 20.7502C11.8719 20.7502 13.1584 20.4901 14.362 19.9704C15.5675 19.4505 16.6152 18.7452 17.5059 17.8545C18.3966 16.9638 19.1019 15.9161 19.6218 14.7106C20.1415 13.507 20.4016 12.2205 20.4016 10.8502C20.4016 9.47989 20.1415 8.19344 19.6218 6.98984C19.1019 5.78431 18.3966 4.7366 17.5059 3.84591C16.6152 2.95522 15.5675 2.24956 14.362 1.72902C13.1584 1.20998 11.8719 0.950195 10.5016 0.950195C9.13125 0.950195 7.8448 1.20998 6.6412 1.729C5.43566 2.24954 4.38796 2.95522 3.49727 3.84591C2.60658 4.7366 1.90123 5.78431 1.38137 6.98984C0.861677 8.19344 0.601562 9.47989 0.601562 10.8502C0.601562 12.2205 0.861677 13.5069 1.38137 14.7105ZM18.6016 10.8502C18.6016 13.0932 17.8122 15.0063 16.2353 16.5839C14.6578 18.1608 12.7446 18.9502 10.5016 18.9502C8.25855 18.9502 6.34573 18.1608 4.76885 16.5839C3.19131 15.0064 2.40156 13.0932 2.40156 10.8502C2.40156 8.60718 3.19131 6.69402 4.76885 5.11649C6.34573 3.5396 8.25855 2.7502 10.5016 2.7502C12.7446 2.7502 14.6578 3.53963 16.2353 5.1165C17.8122 6.69404 18.6016 8.60719 18.6016 10.8502Z\" stroke=\"white\" stroke-width=\"0.2\"><\/path>\n<path d=\"M9.49774 14.2659C9.34347 14.3662 9.19091 14.418 9.04044 14.4253C8.89 14.4326 8.73466 14.3963 8.57296 14.3116C8.41157 14.2271 8.29516 14.1202 8.21856 13.9925C8.14191 13.8647 8.10156 13.7103 8.10156 13.5252V8.1752C8.10156 7.9901 8.14191 7.83564 8.21856 7.7079C8.29516 7.58022 8.41157 7.47332 8.57296 7.38878C8.73466 7.30408 8.89 7.26774 9.04044 7.27508C9.19091 7.28242 9.34279 7.33377 9.49706 7.43404L13.6478 10.0845L13.6515 10.0867C13.9355 10.2512 14.0766 10.5004 14.0766 10.8502C14.0766 11.1999 13.9355 11.4492 13.6515 11.6136L13.6478 11.6159L9.49774 14.2659Z\" stroke=\"white\" stroke-width=\"0.2\"><\/path>\n<\/svg>",
+            "first-link-text": "Watch the video",
+            "first-link-url": "#videoScroll",
+            "second-link-text": "ORDERING A LARGE QUANTITY?",
+            "second-link-url": "shopify:\/\/pages\/wholesale-inquiries"
+          }
+        },
+        "zegsu-alireview-title": {
+          "type": "shopify:\/\/apps\/alireviews-ali-reviews-app\/blocks\/product-title-app-block\/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "product_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "zegsu-alireview-title",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "a355b68c-2d2d-4272-adab-e1006fee46a0",
+        "3d7004d8-1479-46f3-8aea-d908309a3743"
+      ],
+      "settings": {
+        "show_vendor": false,
+        "show_sku": false,
+        "show_taxes_included": false,
+        "show_product_rating": true,
+        "show_sticky_add_to_cart": false,
+        "show_share_buttons": false,
+        "help_page": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "show_thumbnails_on_mobile": false,
+        "desktop_thumbnails_position": "left",
+        "transition_effect": "slide"
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "c133c092-23eb-418b-ab7b-d6f24b4dbbb6": {
+          "type": "reviews",
+          "settings": {
+          }
+        },
+        "795ed9c3-1725-440d-bfe2-e493f74a1bc7": {
+          "type": "content",
+          "settings": {
+            "title": "FEATURES",
+            "content": "<p>{{ product.metafields.custom.third_product_tab | metafield_tag }}<\/p>",
+            "page": "",
+            "meta-img": "{{ product.metafields.custom.third_product_tab_photo.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "c133c092-23eb-418b-ab7b-d6f24b4dbbb6",
+        "795ed9c3-1725-440d-bfe2-e493f74a1bc7"
+      ],
+      "settings": {
+      }
+    },
+    "78daedf6-9a65-4613-b527-dcaf6e09e650": {
+      "type": "you-may-also-like",
+      "settings": {
+        "arrows-desktop": true,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)",
+        "recommendations_count": 4
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "You may also like",
+        "recommendations_count": 4,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "3f8ea610-487f-4e64-b64d-907f6f83ced1": {
+      "type": "featured-collections",
+      "disabled": true,
+      "blocks": {
+        "template--17335819403561__3f8ea610-487f-4e64-b64d-907f6f83ced1-1673869479c6ad0195-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "beach-bags",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17335819403561__3f8ea610-487f-4e64-b64d-907f6f83ced1-1673869479c6ad0195-0"
+      ],
+      "settings": {
+        "arrows-desktop": true,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "judgeme_section_review_widget_7565": {
+      "type": "apps",
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    },
+    "506fcba5-f470-4833-84a7-fd3726c91d41": {
+      "type": "video",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "video": "{{ product.metafields.custom.video_for_product_page_from_files_.value }}",
+        "video_url": "",
+        "meta-video": "{{ product.metafields.custom.video_url.value }}",
+        "image": "{{ product.metafields.custom.third_product_tab_photo.value }}",
+        "background_type": "boxed",
+        "video_size": "auto",
+        "autoplay": false,
+        "show_video_controls": true,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "zegsu-alireviews": {
+      "type": "apps",
+      "blocks": {
+        "dc9a3606-e208-4377-af70-764eaea240ee": {
+          "type": "shopify:\/\/apps\/alireviews-ali-reviews-app\/blocks\/product-app-block\/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "product_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "dc9a3606-e208-4377-af70-764eaea240ee"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-content",
+    "78daedf6-9a65-4613-b527-dcaf6e09e650",
+    "product-recommendations",
+    "3f8ea610-487f-4e64-b64d-907f6f83ced1",
+    "judgeme_section_review_widget_7565",
+    "506fcba5-f470-4833-84a7-fd3726c91d41",
+    "zegsu-alireviews"
+  ]
+}

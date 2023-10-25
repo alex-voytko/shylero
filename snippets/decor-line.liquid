@@ -1,0 +1,33 @@
+<div class="decor-line container">
+    <h2 class="decor__line-title">{{text}}</h2>
+</div>
+{%- style-%}
+.decor-line {
+    background-color: {{color}};
+    padding:20px 0;
+    margin: 0 0 46px 0;
+    max-width: 100%;
+}
+
+.decor__line-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin: 0 auto;
+}
+@media (max-width:768px) {
+    .decor-line {
+        padding: 30px 0;
+        margin: 0 0 40px 0 
+    }
+    .decor__line-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+{%- endstyle-%}

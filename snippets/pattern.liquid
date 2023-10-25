@@ -1,0 +1,127 @@
+{%- assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ',' -%}
+{%- assign color_white_label = 'general.label.white' | t | downcase -%}
+{%- assign quick_buy_icon_name = 'quick-buy-' | append: settings.cart_icon | replace: '_', '-' -%}
+
+{%- if product.url contains '?' -%}
+  {%- assign product_url_contains_query = true -%}
+{%- else -%}
+  {%- assign product_url_contains_query = false -%}
+{%- endif -%}
+
+<product-item data-product-id="{{ product.id }}" class="product-item {{customClass}} {% unless product.available %}product-item--sold-out{% endunless %}" {% if reveal %}reveal{% endif %}>
+  {%- capture product_labels -%}
+    {%- for tag in product.tags -%}
+      {%- if tag contains '__label' -%}
+        <span class="label label--custom{% if tag contains '__label2' %}2{% endif %}">{{ tag | split: ':' | last }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+
+    
+      {% if product.available != true %}
+        
+          <span class="label label--subdued">{{ 'collection.product.sold_out' | t }}</span>
+        
+      {% elsif product.selected_or_first_available_variant.inventory_quantity <= settings.quantity_threshold %}
+        {% if product.selected_or_first_available_variant.inventory_quantity != 0 %}
+          <span class="label label--subdued">Only {{ product.selected_or_first_available_variant.inventory_quantity }} left in stock</span>
+        {% endif %}
+      {% endif %}
+
+    {%- assign cheapest_variant = product.variants | sort: 'price' | first -%}
+
+    {%- if settings.show_discount and product.available and product.price < product.compare_at_price and cheapest_variant.compare_at_price != blank -%}
+      {%- if settings.discount_mode == 'percentage' -%}
+        {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round | append: '%' -%}
+      {%- else -%}
+        {%- capture savings -%}{{ product.compare_at_price | minus: product.price | money }}{%- endcapture -%}
+      {%- endif -%}
+
+      <span class="label label--highlight">{{ 'collection.product.discount_html' | t: savings: savings }}</span>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  <div class="product-item__image-wrapper {% if settings.show_secondary_image and product.media.size > 1 and hide_secondary_image != true %}product-item__image-wrapper--multiple{% endif %}">
+    {%- comment -%}
+        {%- if product_labels != blank and reduced_content != true -%}
+        <div class="product-item__label-list label-list">
+            {{- product_labels -}}
+        </div>
+        {%- endif -%}
+
+      {%- if settings.show_secondary_image and product.media.size > 1 and hide_secondary_image != true -%}
+        {%- assign next_media = product.media[product.featured_media.position] | default: product.media[1] -%}
+        <img class="product-item__secondary-image" loading="lazy" sizes="{{ sizes_attribute }}" {% render 'image-attributes', image: next_media, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %}>
+      {%- endif -%}
+
+      {% if prod.available != true %}
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L41 41" stroke="#A0A0A0" stroke-width="2"/>
+        </svg>
+    {% endif %}
+      {%- endcomment -%}
+    {% for tag in product.tags %}
+        {% if tag contains 'pattern__' %}
+        {% assign pattern_tag = tag %}
+        {% endif %}
+    {% endfor %}
+
+    {% for prod in collections['all'].products %}
+        {% for prod_tag in prod.tags %}
+            {% if prod_tag == pattern_tag %}
+                {% if prod.id == product.id %}
+                        {% for image in prod.images %}
+                            {% if image.alt == 'variant image' %}
+                            {% assign altedImage = image %}
+                            {% endif %}
+                        {% endfor %}
+                        <a href="{{ collections['all'].url }}/{{pattern_tag | replace: ' ', '-' }}" class="product-item__aspect-ratio aspect-ratio{% if settings.product_image_size != 'natural' %} aspect-ratio--square{% endif %}" style="padding-bottom: {{ 100.0 | divided_by: product.featured_media.preview_image.aspect_ratio }}%; --aspect-ratio: {{ product.featured_media.preview_image.aspect_ratio }}">
+                            <img class="product-item__primary-image" loading="lazy" data-media-id="{{ altedImage.id | escape }}" sizes="{{ sizes_attribute }}" {% render 'image-attributes', image: altedImage, sizes: '200,300,400,500,600,700,800,900,1000,1100,1200' %} alt="variant image">
+                        </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% assign altedImage = 'None' %}
+    {% endfor %}
+
+</div>
+
+  <div class="product-item__info {% if show_cta %}product-item__info--with-button{% endif %} {% if reduced_font_size %}text--small{% endif %}">
+    <div class="product-item-meta">
+      {%- if settings.show_vendor -%}
+        {%- assign vendor_handle = product.vendor | handle -%}
+        {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+        {%- unless collection_for_vendor.empty? -%}
+          <a class="product-item-meta__vendor heading heading--xsmall" href="{{ collection_for_vendor.url }}">{{ product.vendor }}</a>
+        {%- else -%}
+          <a class="product-item-meta__vendor heading heading--xsmall" href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+        {%- endunless -%}
+      {%- endif -%}
+      <a href="{{ collections['all'].url }}/{{ pattern_tag | replace: ' ', '-' }}" class="bundle-item-meta__title">{{pattern_tag | remove: 'pattern__' }}</a>
+
+        <!--  -->
+        <!-- custom.my_color_group_tag -->
+        <!-- {% assign count = 0 %}
+        {% paginate collections.all.products by 1000 %}
+          {% for prod in collections.all.products %}
+            {% for tag in prod.tags %}
+              {% if product.tags contains tag %}
+                {% if tag contains 'pattern' %}
+                  {% assign count = count | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        {% endpaginate %}
+        {% if count != 0 %}
+          <p class="product-item-meta__color-count text--small text--subdued">{{count}} Patterns available</p>
+        {% else %}
+          <p class="product-item-meta__color-count text--small text--subdued">1 Pattern available</p>
+        {% endif %}  -->
+
+    </div>
+  </div>
+</product-item>
+
+
+<!--  -->

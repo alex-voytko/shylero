@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "show_collection_image": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "section_height": "small",
+        "text_width": "medium",
+        "image_text_color": "#ffffff",
+        "image_overlay_color": "#303030",
+        "image_overlay_opacity": 30,
+        "quick_links": ""
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_sort_by": true,
+        "products_per_page": 50,
+        "mobile_products_per_row": "2",
+        "desktop_products_per_row": 3,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_color_swatch": true,
+        "open_first_filter_group": false,
+        "filter_position": "always_visible",
+        "promotion_position": "bottom",
+        "promotion_height": "small"
+      }
+    },
+    "zegsu-alireviews-collection": {
+      "type": "apps",
+      "blocks": {
+        "5c095ec5-4cae-48b2-9371-a7087957c7c9": {
+          "type": "shopify:\/\/apps\/alireviews-ali-reviews-app\/blocks\/collection-app-block\/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "5c095ec5-4cae-48b2-9371-a7087957c7c9"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "main",
+    "zegsu-alireviews-collection"
+  ]
+}

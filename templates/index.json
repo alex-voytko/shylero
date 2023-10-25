@@ -1,0 +1,449 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Bags_Collection_7.png",
+            "mobile_image": "shopify:\/\/shop_images\/New_Bags_Collection_7.png",
+            "text_position": "bottom_left",
+            "subheading": "Beach Bags collection",
+            "title": "Functional and durable beach bags",
+            "button_1_text": "Shop Beach Bags",
+            "button_1_link": "shopify:\/\/collections\/beach-bags",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#6fa287",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "slide-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Bags_Collection_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/10_72dfb9d3-fd59-455b-a87a-fa14d746b4d6.png",
+            "text_position": "top_left",
+            "subheading": "MESH and PVC BACKPACKS collection",
+            "title": "HUGE and durable backpacks",
+            "button_1_text": "Shop Backpacks",
+            "button_1_link": "shopify:\/\/collections\/backpacks",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#6fa287",
+            "button_text_color": "#282828",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "ee7d7a6d-997c-4f46-9f3a-4933ae28411e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Bags_Collection_5.png",
+            "mobile_image": "shopify:\/\/shop_images\/Untitled_design_d409b620-bd76-405f-94cf-c1b6988a9103.png",
+            "text_position": "middle_center",
+            "subheading": "Utility Bags collection",
+            "title": "",
+            "button_1_text": "Shop utility bags",
+            "button_1_link": "shopify:\/\/collections\/nurse-bags",
+            "button_2_text": "",
+            "button_2_link": "",
+            "text_color": "#fcadba",
+            "button_background": "#6fa287",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slide-1",
+        "slide-2",
+        "ee7d7a6d-997c-4f46-9f3a-4933ae28411e"
+      ],
+      "settings": {
+        "section_height": "small",
+        "transition_type": "fade",
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "#ffffff"
+      }
+    },
+    "8225c288-f233-41e3-ba96-64dbf1bec036": {
+      "type": "custom-collections-cards",
+      "disabled": true,
+      "blocks": {
+        "6c2a2210-1a2b-4ea7-881d-dbfd069f612a": {
+          "type": "select",
+          "settings": {
+            "title": "",
+            "collection-block": "bestsellers",
+            "collection-img": "shopify:\/\/shop_images\/Untitled_design_11.png",
+            "shadow": 0
+          }
+        },
+        "d23ac932-d81e-4afd-94f4-f2e11fec275a": {
+          "type": "select",
+          "settings": {
+            "title": "",
+            "collection-block": "nurse-bags",
+            "collection-img": "shopify:\/\/shop_images\/Untitled_design_3.png",
+            "shadow": 0
+          }
+        },
+        "71667b59-873a-4c7d-92e4-30059671bc89": {
+          "type": "select",
+          "settings": {
+            "title": "",
+            "collection-block": "beach-bags",
+            "collection-img": "shopify:\/\/shop_images\/Untitled_design_10.png",
+            "shadow": 0
+          }
+        },
+        "c9d3ea24-aea4-44dc-a5ff-17eabc0dbd2c": {
+          "type": "select",
+          "settings": {
+            "title": "",
+            "collection-block": "backpacks",
+            "collection-img": "shopify:\/\/shop_images\/Untitled_design_6.png",
+            "shadow": 3
+          }
+        },
+        "ca3624d8-5d8f-42ad-b6c4-5d93a65e3c7d": {
+          "type": "select",
+          "settings": {
+            "title": "Toddler Nap Mats",
+            "collection-block": "toddler-nap-mats",
+            "collection-img": "shopify:\/\/shop_images\/3_8986f1b0-dde5-4854-9cf7-312ab6cc5a3f.jpg",
+            "shadow": 0
+          }
+        }
+      },
+      "block_order": [
+        "6c2a2210-1a2b-4ea7-881d-dbfd069f612a",
+        "d23ac932-d81e-4afd-94f4-f2e11fec275a",
+        "71667b59-873a-4c7d-92e4-30059671bc89",
+        "c9d3ea24-aea4-44dc-a5ff-17eabc0dbd2c",
+        "ca3624d8-5d8f-42ad-b6c4-5d93a65e3c7d"
+      ],
+      "settings": {
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "bestsellers",
+            "image": "shopify:\/\/shop_images\/Untitled_design_11.png",
+            "subheading": "",
+            "title": "Bestsellers",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "nurse-bags",
+            "image": "shopify:\/\/shop_images\/Untitled_design_3.png",
+            "subheading": "",
+            "title": "Nurse bags",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "beach-bags",
+            "image": "shopify:\/\/shop_images\/Untitled_design_10.png",
+            "subheading": "",
+            "title": "Beach Bags",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "d92c5884-86d0-485a-b1c7-3c49a3389eca": {
+          "type": "collection",
+          "settings": {
+            "collection": "backpacks",
+            "image": "shopify:\/\/shop_images\/Untitled_design_6.png",
+            "subheading": "",
+            "title": "Backpacks",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "d574e7f3-acc4-4009-b917-e0ca478556f4": {
+          "type": "collection",
+          "settings": {
+            "collection": "toddler-nap-mats",
+            "image": "shopify:\/\/shop_images\/3_8986f1b0-dde5-4854-9cf7-312ab6cc5a3f.jpg",
+            "subheading": "",
+            "title": "Toddler Nap Mats",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "fb4dd128-a6d0-4b16-b1c2-a350eb42363d": {
+          "type": "collection",
+          "settings": {
+            "collection": "moving-bags",
+            "image": "shopify:\/\/shop_images\/IMG_8799.jpg",
+            "subheading": "",
+            "title": "Moving bags",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "ca0e4cba-295d-4b5a-baa9-b3d5fc405e8e": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify:\/\/shop_images\/dkjbvjkdsbjvbd.png",
+            "subheading": "",
+            "title": "",
+            "link_text": "",
+            "link_url": "",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "d92c5884-86d0-485a-b1c7-3c49a3389eca",
+        "d574e7f3-acc4-4009-b917-e0ca478556f4",
+        "fb4dd128-a6d0-4b16-b1c2-a350eb42363d",
+        "ca0e4cba-295d-4b5a-baa9-b3d5fc405e8e"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "layout": "carousel",
+        "subheading": "",
+        "title": "",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "989c6739-257f-4eb1-8d3c-b588cf9dfc80": {
+          "type": "collection",
+          "settings": {
+            "collection": "bestsellers",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        },
+        "b41f4bd0-7760-4044-8645-4b0428ed6f64": {
+          "type": "collection",
+          "settings": {
+            "collection": "beach-bags",
+            "label": "NEW IN",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "989c6739-257f-4eb1-8d3c-b588cf9dfc80",
+        "b41f4bd0-7760-4044-8645-4b0428ed6f64"
+      ],
+      "settings": {
+        "arrows-desktop": true,
+        "subheading": "",
+        "title": "Featured Products",
+        "content": "",
+        "products_count": 50,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "shop-the-look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look-1": {
+          "type": "look",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/knlkkhjj.png",
+            "dot_type": "normal",
+            "product_1": "nurse-bag-and-utility-tote-waterproof-ip64-l18xh7x-w14-46x18x36cm-top-ykk®-zip-marble-flowers",
+            "product_1_horizontal_position": 52,
+            "product_1_vertical_position": 58,
+            "product_1_horizontal_position_mobile": 30,
+            "product_1_vertical_position_mobile": 30,
+            "product_2": "",
+            "product_2_horizontal_position": 46,
+            "product_2_vertical_position": 64,
+            "product_2_horizontal_position_mobile": 50,
+            "product_2_vertical_position_mobile": 50,
+            "product_3": "",
+            "product_3_horizontal_position": 62,
+            "product_3_vertical_position": 50,
+            "product_3_horizontal_position_mobile": 70,
+            "product_3_vertical_position_mobile": 70
+          }
+        },
+        "3d2bdde1-af98-4ce2-940a-6695a4e006de": {
+          "type": "look",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_photo.png",
+            "dot_type": "normal",
+            "product_1": "beach-bag-xl-waterproof-ip64-l22xh15xw6-56x38x15cm-top-ykk®-zip-bright-blue-lobster",
+            "product_1_horizontal_position": 51,
+            "product_1_vertical_position": 71,
+            "product_1_horizontal_position_mobile": 30,
+            "product_1_vertical_position_mobile": 30,
+            "product_2": "beach-bag-xl-waterproof-ip64-l22xh15x-w6-56x38x15cm-top-magnet-turquoise-green-crab",
+            "product_2_horizontal_position": 87,
+            "product_2_vertical_position": 50,
+            "product_2_horizontal_position_mobile": 50,
+            "product_2_vertical_position_mobile": 50,
+            "product_3": "",
+            "product_3_horizontal_position": 70,
+            "product_3_vertical_position": 70,
+            "product_3_horizontal_position_mobile": 70,
+            "product_3_vertical_position_mobile": 70
+          }
+        }
+      },
+      "block_order": [
+        "look-1",
+        "3d2bdde1-af98-4ce2-940a-6695a4e006de"
+      ],
+      "settings": {
+        "reveal_on_scroll": true,
+        "label": ""
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "disabled": true,
+      "blocks": {
+        "variant-picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_mode": "block",
+            "color_mode": "color",
+            "size_chart_page": ""
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "atc_button_background": "rgba(0,0,0,0)",
+            "atc_button_text_color": "rgba(0,0,0,0)",
+            "buy_now_button_background": "rgba(0,0,0,0)",
+            "buy_now_button_text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "variant-picker",
+        "buy-buttons"
+      ],
+      "settings": {
+        "product": "copy-of-beach-bag-xl-waterproof-ip64-l22xh15x-w6-56x38x15cm-top-magnet",
+        "subheading": "",
+        "title": "BESTSELLER",
+        "show_vendor": false,
+        "show_sku": false,
+        "show_taxes_included": false,
+        "show_product_rating": true,
+        "show_share_buttons": false,
+        "help_page": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "show_thumbnails_on_mobile": false,
+        "desktop_thumbnails_position": "left",
+        "transition_effect": "slide",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "blog": "about-bags",
+        "subheading": "",
+        "title": "READ THE BLOG",
+        "articles_count": 4,
+        "stack_mobile": true,
+        "show_category": true,
+        "show_excerpt": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "1672222817455cc34d": {
+      "type": "apps",
+      "blocks": {
+        "de669c50-bd8c-4eaa-9c86-753e0b3123ff": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "de669c50-bd8c-4eaa-9c86-753e0b3123ff"
+      ],
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "8225c288-f233-41e3-ba96-64dbf1bec036",
+    "collection-list",
+    "featured-collections",
+    "shop-the-look",
+    "featured-product",
+    "blog-posts",
+    "1672222817455cc34d"
+  ]
+}

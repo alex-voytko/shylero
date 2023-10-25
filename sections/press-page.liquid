@@ -1,0 +1,112 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div>
+
+    <main class="main-konfi">
+    
+        <div class="container-konfi">
+        {%- for block in section.blocks -%}
+          <div class="card-konfi">
+            <div class="card-konfi-image">
+              <a href="{{block.settings.popup_image  | img_url: 'master'}}" data-fancybox="gallery" data-caption="Caption Images 1">
+                <img src={{block.settings.grid_image | img_url: 'master'}} alt="Image Gallery">
+              </a>
+            </div>
+          </div>
+        {%- endfor -%}
+        </div>
+      </main>
+
+</div>
+<style>
+    .container-konfi {
+	 padding: 2rem 1rem;
+	 margin: 0 auto;
+	 max-width: 68rem;
+	 width: 100%;
+}
+ .main-konfi .container-konfi {
+	 display: grid;
+	 grid-template-columns: repeat(2, 1fr);
+	 grid-gap: 1rem;
+	 justify-content: center;
+	 align-items: center;
+}
+ .main-konfi .card-konfi {
+	 background: #fff;
+	 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+	 color: #333;
+	 border-radius: 2px;
+     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .main-konfi .card-konfi-image {
+	 background: #fff;
+	 display: block;
+	 position: relative;
+	 width: 100%;
+}
+ .main-konfi .card-konfi-image img {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: unset;
+    object-fit: contain;
+    padding: 25px;
+}
+ @media only screen and (max-width: 600px) {
+	 .main-konfi .container-konfi {
+		 display: grid;
+		 grid-template-columns: 1fr;
+		 grid-gap: 1rem;
+	}
+}
+</style>
+
+<script>
+    // Fancybox Config
+$('[data-fancybox="gallery"]').fancybox({
+  buttons: [
+    "zoom",
+    "fullScreen",
+    "share",
+    "close"
+  ],
+  loop: false,
+  protect: true
+});
+
+</script>
+{% schema %}
+  {
+    "name": "Product pages",
+    "class": "section-product-template",
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "press_images",
+        "name": "Press images",
+        "settings": [
+            {
+             "type": "image_picker",
+              "id": "grid_image",
+              "label": "Main image"
+            },
+            {
+              "type": "image_picker",
+              "id": "popup_image",
+              "label": "Popup image"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

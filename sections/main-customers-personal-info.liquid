@@ -1,0 +1,142 @@
+<section>
+    <div class="link-bar hidden-phone">
+      <div class="container">
+        <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb breadcrumb--floating text--xsmall text--subdued hidden-pocket">
+            <ol class="breadcrumb__list" role="list">
+
+                <li class="breadcrumb__item">
+                <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+                </li>
+
+                <li class="breadcrumb__item">
+                <span class="breadcrumb__link" aria-current="page">Account</span>
+                </li>
+
+            </ol>
+        </nav>
+        <div class="link-bar__wrapper">
+          <ul class="link-bar__linklist list--unstyled" role="list">
+            <li class="link-bar__link-item">
+              <a href="/pages/personal-info" class="link-bar__link link--animated text--underlined">Personal info</a>
+            </li>
+  
+            <li class="link-bar__link-item">
+              <a href="{{ routes.account_url }}" class="link-bar__link link--animated">{{ 'customer.orders.title' | t }}</a>
+            </li>
+  
+            <li class="link-bar__link-item">
+              <a href="{{ routes.account_addresses_url }}" class="link-bar__link link--animated">{{ 'customer.addresses.title' | t }}</a>
+            </li>
+  
+            <li class="link-bar__link-item">
+              <a href="{{ routes.account_logout_url }}" class="link-bar__link link--animated text--subdued" data-no-instant>{{ 'customer.logout.title' | t }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mobile-toolbar hidden-tablet-and-up">
+      <button class="mobile-toolbar__item" is="toggle-button" aria-expanded="false" aria-controls="account-links-popover">Personal info {%- render 'icon' with 'chevron' -%}</button>
+    </div>
+  
+    <popover-content id="account-links-popover" class="popover">
+      <span class="popover__overlay"></span>
+  
+      <header class="popover__header">
+        <span class="popover__title heading h6">{{- 'customer.general.title' | t -}}</span>
+  
+        <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
+          {%- render 'icon' with 'close' -%}
+        </button>
+      </header>
+  
+      <div class="popover__content">
+        <div class="popover__choice-list">
+
+          <a href="/pages/personal-info" class="popover__choice-item">
+            <span class="popover__choice-label" aria-current="true">Personal info</span>
+          </a>
+
+          <a href="{{ routes.account_url }}" class="popover__choice-item">
+            <span class="popover__choice-label">{{ 'customer.orders.title' | t }}</span>
+          </a>
+  
+          <a href="{{ routes.account_addresses_url }}" class="popover__choice-item">
+            <span class="popover__choice-label">{{ 'customer.addresses.title' | t }}</span>
+          </a>
+  
+          <a href="{{ routes.account_logout_url }}" class="popover__choice-item text--subdued" data-no-instant>
+            <span class="popover__choice-label">{{ 'customer.logout.title' | t }}</span>
+          </a>
+        </div>
+      </div>
+    </popover-content>
+  
+    <div class="account">
+      <div class="container">
+          <div class="page-header page-header--small {% if section.blocks.size == 1 %}page-header--alone{% endif %}">
+            <div class="page-header__text-wrapper text-container">
+              <h1 class="heading h4">Personal Info</h1>              
+            </div>
+          </div>
+  
+        <div class="page-content page-content--fluid">
+            <div class="personal_info_wr">
+                <div class="your_info">
+                    <h2 class="info_title info_title">You are signed in as:</h2>
+                    <p><span>Email: </span>{{customer.email}}</p>
+                    <p><span>Name: </span>{{customer.first_name}} {{customer.last_name}}</p>
+                    <!-- <p><span>Addresses: </span>
+                        <div class="info_divider"></div>
+                        {%- for address in customer.addresses -%}
+                            {{- address | format_address -}}
+                            <div class="info_divider"></div>
+                        {% endfor %}
+                    </p> -->
+                    <a href="{{ routes.account_logout_url }}">sign out</a>                    
+                </div>
+                <div class="change_pass">
+                    <h2 class="info_title recover_pass_title">Change password</h2>
+                    {%- form 'recover_customer_password', name: 'recover', class: 'form' -%}
+                        {%- if form.errors -%}
+                            <div class="banner banner--error form__banner" id="recovery-form-error">
+                                <span class="banner__ribbon">{% render 'icon' with 'form-error' %}</span>
+                                <p class="banner__content">{{ form.errors.messages['form'] }}</p>
+                            </div>
+                            {%- endif -%}
+                
+                            {%- if form.posted_successfully? -%}
+                            <div class="banner banner--success form__banner">
+                                <span class="banner__ribbon">{% render 'icon' with 'form-success' %}</span>
+                                <p class="banner__content">{{ 'customer.recover_password.success' | t }}</p>
+                            </div>
+                            {%- else -%}
+                            <div class="input">
+                                <input type="email" id="customer[recover_email]" class="input__field" name="email" required="required" {% if form.errors %}aria-invalid="true" aria-describedby="recovery-form-error"{% endif %}>
+                                <label for="customer[recover_email]" class="input__label">{{ 'customer.recover_password.email' | t }}</label>
+                            </div>
+                
+                            <button type="submit" is="loader-button" class="form__submit button button--primary button--full">{{ 'customer.recover_password.submit' | t }}</button>
+                            {%- endif -%}
+                
+                            {%- unless form.posted_successfully? -%}
+                            <span class="form__secondary-action text--subdued">
+                                {{- 'customer.recover_password.remember_password' | t -}}
+                                <button type="button" class="link" data-action="switch-login-form">{{ 'customer.recover_password.back_to_login' | t }}</button>
+                            </span>
+                        {%- endunless -%}
+                    {%- endform -%}
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Customer account",
+    "class": "shopify-section--main-customers-info"
+  }
+  {% endschema %}

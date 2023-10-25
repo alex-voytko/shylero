@@ -1,0 +1,144 @@
+{%- assign blockCount = section.blocks.size -%}
+<div class="monogramma">
+    <div class="monogramma__container page-width container">
+        {% for block in section.blocks %}
+            {%- assign url = block.settings.url -%}
+            {%- assign imgDefault = block.settings.image -%}
+            {%- assign text = block.settings.text_badge -%}
+            <div class="monogramma__item">
+                <div class="monogramma__item-image">
+                    <a href="{{url}}">
+                    <img src="{{imgDefault | img_url: 'master'}}" alt="{{collection.alt}}" loading="lazy">
+                    <span class="monogramma__item-badge">{{text}}</span>
+                    </a>
+                </div>
+            </div>       
+        {% endfor %}
+    </div>
+</div>
+{%-style-%}
+.monogramma__item {
+    flex: 0 1 calc(100% / {{blockCount}} - 20px * {{blockCount | minus: 1}} / {{blockCount}} );
+}
+{%-endstyle-%}
+
+<style>
+.monogramma {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.monogramma__container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.monogramma__item {
+}
+.monogramma__item-image {
+    width: 100%;
+    max-width: 100%;
+    height: 660px;
+    position: relative;
+}
+.monogramma__item-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.monogramma__item-badge {
+    width: 100%;
+    max-width: calc(100% - 130px);
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+
+    padding: 20px 0px;
+    background-color: #8AB8E8;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #303030;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 1140px) {
+    .monogramma__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+    }
+    .monogramma__container >*:not(:last-child) {
+        margin-bottom: 40px;
+    }
+    .monogramma__item {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    .monogramma__item-badge {
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media(max-width: 768px) {
+    .monogramma {
+        margin-top: 80px;
+        margin-bottom: 90px;
+    }
+    .monogramma__item-image {
+        height: 345px;
+    }
+    .monogramma__item-badge {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 20px 0px;
+    }
+}
+</style>
+
+
+{% schema %}
+{
+    "name": "Monogramma",
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Block",
+            "settings": [
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Url"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "text_badge",
+                    "label": "Text on badge"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Monogramma"
+        }
+    ]
+}
+{% endschema %}

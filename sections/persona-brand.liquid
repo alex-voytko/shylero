@@ -1,0 +1,206 @@
+<div class="personaBrand">
+    {% render "decor-line"
+        text: {{section.settings.title}},
+        color: {{section.settings.line_bg}}
+    %}
+    <div class="personaBrand_wrap page-width container">
+        {% for block in section.blocks %}
+            <div class="personaBrand__item">
+                <div class="personaBrand__item-image">
+                    <img src="{{block.settings.img | img_url: 'master'}}" alt="{{block.settings.img.alt}}" loading="lazy">
+                </div>
+                <p class="personaBrand__item-text">{{block.settings.text}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.personaBrand_wrap {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(3,1fr);
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+    grid-row-gap: 50px;
+}
+.personaBrand_wrap > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+.personaBrand_wrap > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+.personaBrand_wrap > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+
+.personaBrand__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.personaBrand__item:nth-child(4) {
+    -ms-grid-column: 1 ;
+        grid-column-start: 1 ;
+    -ms-grid-column-span: 2;
+    grid-column-end: 3 ;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-row-span: 1;
+    grid-row-end: 3;
+}
+.personaBrand__item:nth-child(5) {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -ms-grid-column-span: 2;
+    grid-column-end: 4;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    -ms-grid-row-span: 1;
+    grid-row-end: 3;
+}
+.personaBrand__item-image {
+    width: 220px;
+    height: 220px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.personaBrand__item-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+.personaBrand__item-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #303030;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media(max-width: 768px) {
+    .personaBrand__item-image img {
+        object-fit: contain;
+    }
+    .personaBrand_wrap {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(165px ,1fr) 15px minmax(165px ,1fr);
+        grid-template-columns: repeat(2, minmax(165px ,1fr));
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-rows: 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 15px;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .personaBrand_wrap > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .personaBrand_wrap > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+    .personaBrand__item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: stretch;
+            -ms-flex-pack: stretch;
+                justify-content: stretch;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    .personaBrand__item-image {
+        width: 100%;
+        height: 165px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .personaBrand__item:nth-child(4),
+    .personaBrand__item:nth-child(5) {
+        -ms-grid-column: unset ;
+            grid-column-start: unset ;
+        grid-column-end: unset ;
+        -ms-grid-row: unset;
+            grid-row-start: unset;
+        grid-row-end: unset;
+    }
+}
+
+</style>
+
+{% schema %}
+{
+    "name": "Persona brand",
+    "max_blocks": 8,
+    "blocks": [
+        {
+            "type": "brand",
+            "name": "Brand",
+            "settings": [
+                {
+                        "type": "image_picker",
+                        "id": "img",
+                        "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "color",
+            "id": "line_bg",
+            "label": "Background line",
+            "default": "#6FA287"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Persona brand"
+        }
+    ]
+}
+{% endschema %}

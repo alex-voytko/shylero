@@ -1,0 +1,148 @@
+<section class="text-image__section">
+    <div class="mobile_img_wr">
+        <img class="mobile_img" src="{{ section.settings.bg_image_m | img_url: 'master' }}" alt="{{ section.settings.bg_image_m.alt }}">
+    </div>
+    <div class="text-image__wrapper container" style="background: url({{ section.settings.bg_image | img_url:'master' }}); background-size: cover;">
+        <div class="text-image__text-wrapper" style="background-color: {{ section.settings.wrapper_bg_color }};">
+            {% for block in section.blocks %}
+                <div class="text-image__text-item">
+                    {% if block.settings.title != blank %}
+                        <span class="text-title">{{ block.settings.title }}</span>
+                    {% endif %}
+                    <div class="text__list-wrapper list-{{ block.settings.list_type }}">
+                        {{ block.settings.list }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+    .text-image__wrapper {
+        padding: 50px;
+    }
+
+    .text-image__text-wrapper {
+        max-width: 500px;
+        width: 100%;
+        padding: 50px 50px 0 50px;
+    }
+
+    .text-image__text-item {
+        padding-bottom: 50px;
+    }
+
+    .text-title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #303030;
+    }
+
+    .text__list-wrapper.list-horizontal {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        margin-top: 20px;
+    }
+
+    .text__list-wrapper p {
+        margin: 0;
+    }
+
+    .text__list-wrapper.list-horizontal p a {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-decoration-line: underline;
+        text-decoration-color: #6FA287;
+        text-transform: capitalize;
+
+        color: #6FA287;
+        transition: all .25s ease-in-out;
+    }
+    .text__list-wrapper.list-horizontal p a:hover {
+        transition: all .25s ease-in-out;
+        transform: scale(1.05);
+        text-decoration: unset;
+    }
+</style>
+
+{% schema %}
+{
+  "name": "List on image",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background Image (mobile)"
+    },
+    {
+        "type": "color",
+        "id": "wrapper_bg_color",
+        "label": "Text background" 
+    }
+  ],
+  "blocks": [
+    {
+        "name": "List",
+        "type": "text",
+        "settings": [
+            {
+               "type": "select",
+               "id": "list_type" ,
+               "label": "List type",
+               "options": [
+                    {
+                        "value": "horizontal",
+                        "label": "Horizontal"
+                    },
+                    {
+                        "value": "vertical",
+                        "label": "Vertical"
+                    }
+                ],
+                "default": "horizontal"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "list",
+              "label": "List",
+              "info": "Use new line for each of list items!"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List on image"
+    }
+  ]
+}
+{% endschema %}

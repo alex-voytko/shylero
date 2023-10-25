@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "page_width": "medium"
+      }
+    },
+    "1abf572c-01ad-42a5-bdee-6d5e22c127eb": {
+      "type": "rich-text",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "content": "<p>By subscribing you agree to receive marketing emails from LERO FAMILY LLC containing news, updates and promotions regarding our products and events. You hereby confirm that this is your email address and not that of someone else or that you have the proper authority to subscribe this email address.<\/p><p>You can withdraw your consent at any time. For more details see our Privacy Policy or <a href=\"\/pages\/contact-us\" title=\"Contact us\">contact us<\/a>.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "center",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1abf572c-01ad-42a5-bdee-6d5e22c127eb"
+  ]
+}

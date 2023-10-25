@@ -1,0 +1,133 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "page_width": "medium"
+      }
+    },
+    "a52208c7-4127-4bf1-b102-0a6ba694f9fb": {
+      "type": "custom-banner",
+      "settings": {
+        "title": "ABOUT US",
+        "title-color": "#ffffff",
+        "img": "shopify:\/\/shop_images\/Rectangle_198.png"
+      }
+    },
+    "379d39ed-8038-48e8-940a-1d3a0318b6d0": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17372577726761__379d39ed-8038-48e8-940a-1d3a0318b6d0-16724131558da59284-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_200.png",
+            "tab_label": "Item",
+            "subheading": "",
+            "title": "OUR GOAL IS TO CREATE QUALITY PRODUCTS WITH CLOSE REGARD FOR DETAIL",
+            "content": "<p>Our small family-owned business based in California since 2016 produces a wide range of high-quality bags and backpacks that cater to the needs of individuals who value functionality and organization.<\/p><p> We are proud to offer a diverse product range that includes beach bags, PVC backpacks, mesh backpacks, and Utility Nurse bags. As we continue to grow, we are delighted to announce that in 2023, we will be launching a range of new products, including kids' mats, pet carriers, and moving bags. <\/p><p>These products are designed to meet the needs of families and individuals who require functional and high-quality bags for everyday use. Our commitment to quality and functionality is reflected in every product that we produce. <\/p><p>We take pride in sourcing only the highest quality materials to ensure that our products are durable and long-lasting. Our attention to detail is evident in the design and functionality of our products, which are intended to make life easier for our customers. As a family-owned and operated business, we understand the importance of providing exceptional customer service. <\/p><p>Our goal is not only to meet but to exceed customer expectations. We value our customers' feedback and are constantly striving to improve our products and services to better serve them. We pride ourselves on our attention to detail, exceptional customer service, and dedication to producing functional and high-quality products.<\/p>",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17372577726761__379d39ed-8038-48e8-940a-1d3a0318b6d0-16724131558da59284-0"
+      ],
+      "settings": {
+        "reveal_on_scroll": false,
+        "background_type": "full_width",
+        "background_overlap": "image",
+        "image_position": "left",
+        "text_alignment": "left",
+        "cycle_speed": 3,
+        "accent_background": "#8ab8e8",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "8e33dffc-b697-4a2f-9f97-114a958e2ba2": {
+      "type": "text-on-image",
+      "blocks": {
+        "b80f5366-bc43-4276-831d-131575ed021e": {
+          "type": "text",
+          "settings": {
+            "list_type": "horizontal",
+            "title": "Currently, we offer three product categories:",
+            "list": "<p><a href=\"\/collections\/beach-bags\" title=\"Beach bags\">Beach bags<\/a><\/p><p><a href=\"\/blogs\/about-bags\/5-best-anti-theft-waterproof-beach-tote-bags-and-beach-backpacks-our-summer-2020-shopping-guide-for-women-and-men\" title=\"5 BEST ANTI-THEFT WATERPROOF BEACH TOTE BAGS AND BEACH BACKPACKS. OUR SUMMER 2020 SHOPPING GUIDE FOR WOMEN AND MEN\">Backpacks<\/a><\/p><p><a href=\"\/collections\/beach-bags\" title=\"Beach bags\">Nurse bags<\/a><\/p>"
+          }
+        },
+        "0265696a-3ebe-45a1-8479-ccc6712095fe": {
+          "type": "text",
+          "settings": {
+            "list_type": "vertical",
+            "title": "Purchase us here online:",
+            "list": "<p><strong>USA<br\/><\/strong>- shylero.com<br\/>- amazon.com - LERO FAMILY LLC<\/p><p><strong>Australia<\/strong><br\/>- amazon.au - LERO FAMILY LLC (USA)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b80f5366-bc43-4276-831d-131575ed021e",
+        "0265696a-3ebe-45a1-8479-ccc6712095fe"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Rectangle_199.png",
+        "bg_image_m": "shopify:\/\/shop_images\/lijdhsjahdas.png",
+        "wrapper_bg_color": "#f5f5f5"
+      }
+    },
+    "46ab6bb7-67d6-4360-99c6-21a562634622": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "OUR TEAM FAVORITES",
+        "products_count": 4,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "71085e38-3cd4-4a40-8427-16f4d4a668d3": {
+      "type": "featured-collections",
+      "disabled": true,
+      "blocks": {
+        "template--17372577726761__71085e38-3cd4-4a40-8427-16f4d4a668d3-1673859669c3f922fc-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "beach-bags",
+            "label": "",
+            "button_text": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17372577726761__71085e38-3cd4-4a40-8427-16f4d4a668d3-1673859669c3f922fc-0"
+      ],
+      "settings": {
+        "arrows-desktop": false,
+        "subheading": "",
+        "title": "OUR TEAM FAVORITES",
+        "content": "",
+        "products_count": 8,
+        "products_per_row": 4,
+        "stack_products": true,
+        "show_cta": false,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a52208c7-4127-4bf1-b102-0a6ba694f9fb",
+    "379d39ed-8038-48e8-940a-1d3a0318b6d0",
+    "8e33dffc-b697-4a2f-9f97-114a958e2ba2",
+    "46ab6bb7-67d6-4360-99c6-21a562634622",
+    "71085e38-3cd4-4a40-8427-16f4d4a668d3"
+  ]
+}

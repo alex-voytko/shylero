@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-customers-login",
+      "blocks": {
+        "login_form": {
+          "type": "login",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "login_form"
+      ],
+      "settings": {
+        "left-account-img": "shopify:\/\/shop_images\/Online_wishes_list-rafiki_1.png",
+        "right-account-img": "shopify:\/\/shop_images\/In_no_time-rafiki_1.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

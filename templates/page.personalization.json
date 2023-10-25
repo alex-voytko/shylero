@@ -1,0 +1,191 @@
+{
+  "sections": {
+    "main": {
+      "type": "personalization",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "98bbe1a7-6312-487f-a65d-018c3a71e510": {
+      "type": "personalization-banner",
+      "settings": {
+        "st": 120,
+        "sb": 120,
+        "stm": 106,
+        "sbm": 106,
+        "shadow": true,
+        "desktop_img": "shopify:\/\/shop_images\/Rectangle_47.png",
+        "mobile_img": "shopify:\/\/shop_images\/Rectangle_47_1.png",
+        "type_of_title": "h1",
+        "title": "MONOGRAMMED & PERSONALIZED"
+      }
+    },
+    "4a42be41-d57c-4ab6-bac1-324e10aee0f1": {
+      "type": "how-to-personalization",
+      "blocks": {
+        "81afe0ce-f9b9-43dc-b196-6a696679076a": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify:\/\/shop_images\/Group_160_1.png",
+            "text_on": "",
+            "text_below": "<p><strong>Choose your new SHYLERO bag.<\/strong><\/p>"
+          }
+        },
+        "a5931559-da2c-4d21-bd79-c9a2db81f362": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify:\/\/shop_images\/Group_161_1.png",
+            "text_on": "<p>Monogram Your Bag (+ $15\/+ 7 Business Days)<\/p>",
+            "text_below": "<p><strong>Select “Monogram your bag” <\/strong><\/p><p>(Don’t see that option? Sorry, that product can’t be monogrammed.)<\/p>"
+          }
+        },
+        "a29d78a7-ccd4-42de-bb40-5d5f1ade6d7e": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify:\/\/shop_images\/Group_160_1.png",
+            "text_on": "",
+            "text_below": "<p><strong>Personalize the bag by selecting your monogram type, font, letters and color.<\/strong><\/p>"
+          }
+        },
+        "d3338d89-a3ad-4b33-9550-eac93fc8ab66": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify:\/\/shop_images\/Group_163_1.png",
+            "text_on": "<p><strong>Add to Cart<\/strong><\/p>",
+            "text_below": "<p><strong>Add to your cart and checkout as usual!<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "81afe0ce-f9b9-43dc-b196-6a696679076a",
+        "a5931559-da2c-4d21-bd79-c9a2db81f362",
+        "a29d78a7-ccd4-42de-bb40-5d5f1ade6d7e",
+        "d3338d89-a3ad-4b33-9550-eac93fc8ab66"
+      ],
+      "settings": {
+        "title": "HOW TO PERSONALIZE YOUR SHYLERO BAG",
+        "line_bg": "#6fa287"
+      }
+    },
+    "b96353b7-19b9-40c4-a052-aafdbc48120a": {
+      "type": "persona-brand",
+      "disabled": true,
+      "blocks": {
+        "55c4ab09-a840-42d6-8522-57758528d1ae": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Group_138.png",
+            "text": "Marley"
+          }
+        },
+        "8744fbbf-2341-438e-b631-eaa7f29560b6": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Group_140.png",
+            "text": "Creative Memories"
+          }
+        },
+        "1b9aea22-5c11-4192-8584-4e1c0f7818ad": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Group_141.png",
+            "text": "Honeymoon"
+          }
+        },
+        "4a366f83-8b27-4b68-8204-a793a81628a1": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Group_142.png",
+            "text": "Typewriter"
+          }
+        },
+        "a9cea5fd-fcfa-469d-a485-7e7552057ea4": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Group_143.png",
+            "text": "Craft room"
+          }
+        },
+        "a6fcd82f-b6bd-4eda-b995-02bafc7d8f41": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/image_5.png",
+            "text": "Round Monogram"
+          }
+        },
+        "61e901c8-b8d9-42d8-af32-66f9699cd6a7": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/image_6.png",
+            "text": "Sun Monogram"
+          }
+        },
+        "a0e58998-69eb-4ac4-a3e6-f0bdc880bdee": {
+          "type": "brand",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/image_7.png",
+            "text": "Initials"
+          }
+        }
+      },
+      "block_order": [
+        "55c4ab09-a840-42d6-8522-57758528d1ae",
+        "8744fbbf-2341-438e-b631-eaa7f29560b6",
+        "1b9aea22-5c11-4192-8584-4e1c0f7818ad",
+        "4a366f83-8b27-4b68-8204-a793a81628a1",
+        "a9cea5fd-fcfa-469d-a485-7e7552057ea4",
+        "a6fcd82f-b6bd-4eda-b995-02bafc7d8f41",
+        "61e901c8-b8d9-42d8-af32-66f9699cd6a7",
+        "a0e58998-69eb-4ac4-a3e6-f0bdc880bdee"
+      ],
+      "settings": {
+        "title": "MONOGRAM TYPES",
+        "line_bg": "#6fa287"
+      }
+    },
+    "8963dae5-5e79-4b6e-bc3a-c0e465078df2": {
+      "type": "persona-monogramma",
+      "blocks": {
+        "ddf9a097-88f6-47d5-9455-fcbc7ea71557": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": "shopify:\/\/collections\/beach-bags",
+            "image": "shopify:\/\/shop_images\/Rectangle_82.png",
+            "text_badge": "MONOGRAMMABLE BEACH BAGS"
+          }
+        },
+        "7df92def-cb03-46ff-9c9c-003767922fd7": {
+          "type": "block",
+          "settings": {
+            "url": "shopify:\/\/collections\/nurse-bags",
+            "image": "shopify:\/\/shop_images\/Nurse_Bag_Personalization.jpg",
+            "text_badge": "MONOGRAMMABLE NURSE BAGS"
+          }
+        },
+        "991888f4-2384-4d06-a109-63a1f5a5cdaf": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": "",
+            "text_badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "ddf9a097-88f6-47d5-9455-fcbc7ea71557",
+        "7df92def-cb03-46ff-9c9c-003767922fd7",
+        "991888f4-2384-4d06-a109-63a1f5a5cdaf"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "98bbe1a7-6312-487f-a65d-018c3a71e510",
+    "4a42be41-d57c-4ab6-bac1-324e10aee0f1",
+    "b96353b7-19b9-40c4-a052-aafdbc48120a",
+    "8963dae5-5e79-4b6e-bc3a-c0e465078df2"
+  ]
+}

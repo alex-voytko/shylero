@@ -1,0 +1,237 @@
+{%- assign shadow = "" -%}
+{% if section.settings.shadow == true %}
+    {%- assign shadow = shadow | append: '_shadow' -%}
+{% endif %}
+
+<div class="personaBanner personaBanner-{{section.id}} {{shadow}}">
+    <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="container breadcrumb breadcrumb--floating text--xsmall hidden-phone">
+    <ol class="breadcrumb__list" role="list">
+        <li class="breadcrumb__item">
+            <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+        </li>
+
+        <li class="breadcrumb__item">
+            <span class="breadcrumb__link" aria-current="page">
+                {{page.url | split: '/' | last | replace: '-', ' ' }}
+            </span>
+        </li>
+    </ol>
+    </nav>
+    <div class="personaBanner__container page-width">
+        {% if section.settings.type_of_title == "h1" %}
+            <h1 class="personaBanner-title">
+        {%- else -%}
+            <h2>
+        {% endif %}
+            {{section.settings.title}}    
+        {% if section.settings.type_of_title == "h1" %}
+            <h1 class="personaBanner-title">
+        {%- else -%}
+            </h2>
+        {% endif %}
+    </div>
+    <div class="personaBanner__image">
+        <img class="personaBanner__image-desktop " src="{{section.settings.desktop_img | img_url: 'master'}}" alt="{{section.settings.desktop_img.alt}}" loading="lazy">
+        {% if section.settings.mobile_img != blank %}
+        <img class="personaBanner__image-mobile " src="{{section.settings.mobile_img | img_url: 'master'}}" alt="{{section.settings.mobile_img.alt}}" loading="lazy">
+        {%- else -%}
+        <img class="personaBanner__image-mobile " src="{{section.settings.desktop_img | img_url: 'master'}}" alt="{{section.settings.desktop_img.alt}}" loading="lazy">
+        {% endif %}
+    </div>
+</div>
+
+{%- style -%}
+.personaBanner-{{section.id}} {
+    padding-top:{{section.settings.st}}px; 
+    padding-bottom:{{section.settings.sb}}px; 
+}
+.personaBanner-{{section.id}}._shadow:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 48, 48, 0.3);
+    z-index: -1;
+}
+@media(max-width: 768px) {
+    .personaBanner-{{section.id}} {
+        padding-top:{{section.settings.stm}}px; 
+        padding-bottom:{{section.settings.sbm}}px; 
+    }
+}
+{%- endstyle -%}
+
+<style>
+.personaBanner a.breadcrumb__link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #fff;
+}
+.personaBanner span.breadcrumb__link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #D9D9D9;
+}
+.personaBanner .breadcrumb__item + .breadcrumb__item::before {
+    color: #fff;
+}
+.personaBanner {
+    position: relative;
+}
+.personaBanner__container {
+    padding: 0 24px;
+}
+.personaBanner-title {
+    margin: 0 auto;
+    max-width: 936px;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 61px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+}
+.personaBanner__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.personaBanner__image-desktop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.personaBanner__image-mobile {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media(max-width: 768px) {
+    .personaBanner__image-desktop {
+            display: none;
+    }
+    .personaBanner__image-mobile {
+        display: block;
+    } 
+    .personaBanner-title {
+        font-size: 35px;
+        line-height: 42px;
+    }
+}
+</style>
+
+{% schema %}
+{
+    "name": "Personalization banner",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Desktop space"
+        },
+        {
+            "type": "range",
+            "id": "st",
+            "label": "Space top",
+            "unit": "px",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "sb",
+            "label": "Space bottom",
+            "unit": "px",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "default": 0
+        },
+        {
+            "type": "header",
+            "content": "Mobile space"
+        },
+        {
+            "type": "range",
+            "id": "stm",
+            "label": "Space top ",
+            "unit": "px",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "sbm",
+            "label": "Space bottom",
+            "unit": "px",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "default": 0
+        },
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "type": "checkbox",
+            "id": "shadow",
+            "label": "Turn on shadow for image",
+            "default": true
+        },
+        {
+            "type": "image_picker",
+            "id": "desktop_img",
+            "label": "Desktop image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_img",
+            "label": "Mobile image"
+        },
+        {
+            "type": "select",
+            "id": "type_of_title",
+            "label": "Type of title",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                }
+            ]
+        },
+        {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Personalization banner"
+        }
+    ]
+}
+{% endschema %}

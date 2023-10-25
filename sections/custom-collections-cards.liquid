@@ -1,0 +1,82 @@
+<section class="custom_collection_cards container section">
+    <div class="swiper-btn-wr cards_swiper_btns">
+        <div class="swiper-btn-prev swiper-btn">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12L7.4 10.55L3.85 7H16V5H3.85L7.4 1.45L6 0L0 6L6 12Z" fill="#8AB8E8"/>
+        </svg>
+        </div>
+        <div class="swiper-btn-next swiper-btn">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" fill="#8AB8E8"/>
+        </svg>
+        </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-cards"></div>
+    <div class="collections_cards swiper">
+        <div class="collections_wr swiper-wrapper">
+            {% for block in section.blocks %}    
+                <a href="{{ block.settings.collection-block.url }}" class="swiper-slide collection-card">
+                    <h3 class="heading h3 card-title">
+                        {% if block.settings.title == blank %}
+                            {{ block.settings.collection-block.title }}
+                        {% else %}
+                            {{ block.settings.title }}
+                        {% endif %}
+                        </h3>
+                    {% if block.settings.collection-img != blank %}
+                        <img src="{{ block.settings.collection-img | img_url: 'master' }}" alt="{{block.settings.collection-img.alt}}">
+                        {% else %}
+                        <img src="{{ block.settings.collection-block.image | img_url: 'master' }}" alt="{{ block.settings.collection-block.image.alt }}">
+                    {% endif %}
+                    <div class="card_shadow" style="background-color: rgba(48, 48, 48, 0.{{block.settings.shadow}});"></div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Collections cards (C)",
+    "blocks": [
+        {
+            "name": "Collection card",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Card name"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection-block",
+                    "label": "Collection"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "collection-img",
+                    "label": "Change img for card"
+                },
+                {
+                    "type": "range",
+                    "id": "shadow",
+                    "label": "Shadow",
+                    "unit": "0%",
+                    "min": 0,
+                    "max": 10,
+                    "step": 1,
+                    "default": 0
+                }
+            ]
+        }
+    ],
+   "presets": [
+        {
+            "category": "select",
+            "name": "Collections cards (C)"
+        }
+   ]
+}
+{% endschema %}

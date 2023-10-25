@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "main": {
+      "type": "press-page",
+      "blocks": {
+        "6bd13cdc-718b-4ae3-8eaa-53afdd68e867": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/OprahDaily-Logo.jpg",
+            "popup_image": "shopify:\/\/shop_images\/Shylero12.jpg"
+          }
+        },
+        "d3b58dee-87fb-4c7e-9cb6-36f7fad75c2a": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/Insider.jpg",
+            "popup_image": "shopify:\/\/shop_images\/Shylero4.jpg"
+          }
+        },
+        "a67c5bd0-46f1-4699-bb8a-ac6340486e7a": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/Today-Logo.jpg",
+            "popup_image": "shopify:\/\/shop_images\/Shylero3.jpg"
+          }
+        },
+        "223bb8ec-a52a-43dc-8360-e4dbcdd12835": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/tripsavvy-logo-vector.jpg",
+            "popup_image": "shopify:\/\/shop_images\/s2.jpg"
+          }
+        },
+        "41e974be-777b-4e1f-986f-67b378172d75": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/Road-Affair-Logo.jpg",
+            "popup_image": "shopify:\/\/shop_images\/s4.jpg"
+          }
+        },
+        "d2675f60-89b5-4237-88d7-6f4a97743e21": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/GH-Logo.png",
+            "popup_image": "shopify:\/\/shop_images\/Shylero7.jpg"
+          }
+        },
+        "9caf7f8a-f603-4642-b0b6-2beae6cebb8b": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/Travel-with-a-plan-LOGO.png",
+            "popup_image": "shopify:\/\/shop_images\/Shylero6.jpg"
+          }
+        },
+        "ae16e7e1-f4de-4702-b10f-0f64f7d4f16c": {
+          "type": "press_images",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/SPY.png",
+            "popup_image": "shopify:\/\/shop_images\/Shylero5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6bd13cdc-718b-4ae3-8eaa-53afdd68e867",
+        "d3b58dee-87fb-4c7e-9cb6-36f7fad75c2a",
+        "a67c5bd0-46f1-4699-bb8a-ac6340486e7a",
+        "223bb8ec-a52a-43dc-8360-e4dbcdd12835",
+        "41e974be-777b-4e1f-986f-67b378172d75",
+        "d2675f60-89b5-4237-88d7-6f4a97743e21",
+        "9caf7f8a-f603-4642-b0b6-2beae6cebb8b",
+        "ae16e7e1-f4de-4702-b10f-0f64f7d4f16c"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
