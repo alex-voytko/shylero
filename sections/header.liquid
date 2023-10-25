@@ -270,11 +270,10 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
               {%- render 'icon' with 'header-search' -%}
             </a>
           {%- endif -%}
-          {% render 'iwish_v2' with 'iwishlink' %}</a>
 
             <!-- <div class="customer_accounts_enabled"> -->
               {%- if shop.customer_accounts_enabled -%}
-                <div class="wishlist_hook has-dropdown header__icon-wrapper tap-area hidden-phone {% unless section.settings.show_icons %}hidden-desk{% endunless %}" aria-label="{% if customer %}{{ 'header.general.account' | t | escape }}{% else %}{{ 'header.general.login' | t | escape }}{% endif %}">
+                <div id="account-link-icon" class="wishlist_hook has-dropdown header__icon-wrapper tap-area hidden-phone {% unless section.settings.show_icons %}hidden-desk{% endunless %}" aria-label="{% if customer %}{{ 'header.general.account' | t | escape }}{% else %}{{ 'header.general.login' | t | escape }}{% endif %}">
                   <span>{%- render 'icon' with 'header-customer' -%}</span>
                   <ul hidden="" class="nav-dropdown nav-dropdown--restrict list--unstyled account_drop-down" role="list">
                     <li class="nav-dropdown__item">
