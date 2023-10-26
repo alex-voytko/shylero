@@ -233,16 +233,17 @@ header-drawer #wishlist-icon-bubble.small-hide {
 /* 
     Wishlist button (product page) 
 */
-.product__info-wrapper .button-add-remove-wishlist {
-    margin-top: -1.25rem;
+#pdp-button-add-remove-wishlist {
+    padding-right: 0;
+    padding-left: 0;
 }
   
-.product__info-wrapper .button-add-remove-wishlist > span {
+.button-add-remove-wishlist > span {
     display: inline-flex;
     align-items: center;
 }
   
-.product__info-wrapper .button-add-remove-wishlist svg {
+.button-add-remove-wishlist svg {
     margin-right: 0.75rem;
 }
 
@@ -412,7 +413,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         const htmlToInsert = `
-            <button 
+            <button
+                id="pdp-button-add-remove-wishlist"
                 class="button-add-remove-wishlist button button--full-width button--tertiary" 
                 type="button"
                 onclick="onClickEgWishlistButton(this, event)"
